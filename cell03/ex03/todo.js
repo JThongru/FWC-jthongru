@@ -17,7 +17,7 @@ function getCookie(name) {
 //Update cookies
 function saveTodos() {
     const todos = [];
-    // กวาดเก็บข้อความจากลูกทุกตัวใน #ft_list
+    
     const items = ftList.querySelectorAll(".todo-item");
     items.forEach(item => todos.push(item.textContent));
     setCookie("todos", JSON.stringify(todos));
@@ -29,12 +29,12 @@ function createTodoElement(text) {
     todo.className = "todo-item";
     todo.textContent = text;
 
-    // เมื่อคลิกที่ตัว To-Do ให้ถามยืนยันการลบ
+    
     todo.addEventListener("click", () => {
         const confirmDelete = confirm("Do you want to remove this to-do item?");
         if (confirmDelete) {
-            todo.remove(); // ลบออกจาก DOM อย่างถาวร
-            saveTodos();   // อัปเดต Cookie ใหม่
+            todo.remove(); 
+            saveTodos();   
         }
     });
 
@@ -45,7 +45,7 @@ function createTodoElement(text) {
 function addTodo(text) {
     if (!text || text.trim() === "") return;
     const todoEl = createTodoElement(text);
-    ftList.prepend(todoEl); // prepend จะนำไปวางไว้หน้าสุด/บนสุดเสมอ
+    ftList.prepend(todoEl); 
     saveTodos();
 }
 
@@ -63,7 +63,7 @@ window.addEventListener("DOMContentLoaded", () => {
     if (saved) {
         try {
             const todos = JSON.parse(saved);
-            //ให้มันเรียงเหมือนเดิม
+            
             for (let i = todos.length - 1; i >= 0; i--) {
                 const todoEl = createTodoElement(todos[i]);
                 ftList.prepend(todoEl);
