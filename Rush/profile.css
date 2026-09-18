@@ -1,0 +1,434 @@
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #fbfbfd;
+    --text-primary: #1d1d1f;
+    --text-secondary: #86868b;
+    --accent: #0071e3;
+    --border: rgba(0, 0, 0, 0.08);
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Sticky Navigation Bar */
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid var(--border);
+    z-index: 999;
+}
+
+.nav-container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 13px;
+    color: var(--text-primary);
+    opacity: 0.7;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+    color: var(--accent);
+}
+
+/* Base Sections */
+.section {
+    padding: 100px 24px;
+}
+
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+/* About / Hero */
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 56px;
+}
+
+.avatar-wrapper {
+    flex-shrink: 0;
+}
+
+.avatar {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent);
+    background: rgba(0, 113, 227, 0.08);
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+}
+
+.hero-text h1 {
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+}
+
+.role {
+    font-size: 20px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    margin-bottom: 18px;
+}
+
+.bio {
+    font-size: 16px;
+    color: #424245;
+    line-height: 1.6;
+    max-width: 580px;
+}
+
+/* Showcase Section */
+.showcase-section {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.section-header h2 {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    margin-bottom: 8px;
+}
+
+.section-desc {
+    font-size: 16px;
+    color: var(--text-secondary);
+}
+
+/* Left-aligned variant used by the showcase header (matches the reference layout) */
+.section-header-left {
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.eyebrow {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    max-width: 640px;
+    margin: 0 0 48px 0;
+    padding-left: 28px;
+    border-left: 2px solid var(--border);
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 32px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -34px;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg-secondary);
+}
+
+.timeline-date {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+}
+
+.timeline-item h3 {
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+}
+
+.timeline-item p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 560px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+/* Skill tag cards reuse .card styling, just tighter columns */
+.skill-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.skill-card h4 {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent);
+    background: rgba(0, 113, 227, 0.08);
+    padding: 5px 12px;
+    border-radius: 999px;
+}
+
+.card {
+    background: var(--bg-primary);
+    padding: 32px 28px;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    box-shadow: var(--card-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.card-icon {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+}
+
+.card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Contact Section */
+.text-center {
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    margin-bottom: 8px;
+}
+
+.contact-desc {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+/* Link buttons now show a label + the actual handle/address, no click required to identify who's who */
+.link-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    min-width: 190px;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 14px;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    transition: all 0.2s ease;
+}
+
+.link-btn .link-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
+.link-btn .link-value {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+}
+
+.link-btn:hover {
+    background: #e8e8ed;
+}
+
+.link-btn.primary {
+    background: var(--accent);
+    color: #ffffff;
+    border-color: transparent;
+}
+
+.link-btn.primary .link-label {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.link-btn.primary:hover {
+    background: #0077ed;
+}
+
+/* Footer */
+footer {
+    padding: 40px 24px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border);
+}
+
+.footer-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    margin-top: 18px;
+}
+
+.footer-logo {
+    height: 320px;
+    max-width: 500px;
+    width: auto;
+    object-fit: contain;
+    /* Black & white as requested; opacity is lowered slightly to match the
+       muted, secondary feel of the footer text, and restores on hover. */
+    filter: grayscale(100%);
+    opacity: 0.55;
+    transition: opacity 0.2s ease;
+}
+
+.footer-logo:hover {
+    opacity: 0.9;
+}
+
+/* Responsive (Mobile) */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 32px;
+    }
+
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    .bio {
+        margin: 0 auto;
+    }
+
+    .section-header-left {
+        text-align: center;
+    }
+
+    .timeline {
+        max-width: 100%;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .link-btn {
+        min-width: 0;
+    }
+}

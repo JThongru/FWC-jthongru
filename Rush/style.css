@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation Bar Fix ด้านบน */
+.navbar {
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #000;
+}
+
+/* Section Layout */
+.section {
+    padding: 6rem 2rem 4rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.center {
+    text-align: center;
+}
+
+.bg-light {
+    background-color: #f9f9f9;
+}
+
+/* Avatar & UI Components */
+.avatar {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.grid img {
+    width: 600px;
+    height: auto;
+    display: block;
+    margin: 10px auto 0 auto;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background: #111;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.links a {
+    margin: 1rem 0.5rem;
+}
+
+.links img {
+    width: 50px;
+    height: 50px;
+}
